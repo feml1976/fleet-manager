@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "444ab77e-18b1-463f-aeea-be393ddd3863",
+		"name": "Fleet-Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43581428",
+		"_collection_link": "https://franciscomontoya.postman.co/workspace/Francisco-Montoya's-Workspace~1df91047-3de1-412e-8527-e5e86a9766cb/collection/43581428-444ab77e-18b1-463f-aeea-be393ddd3863?action=share&source=collection_link&creator=43581428"
+	},
+	"item": [
+		{
+			"name": "POST  http://localhost:8002/api/v1/requests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n  \"request\": 2529028,  \r\n  \"activate\": {  \r\n    \"Proceso\": \"Test\",  \r\n    \"Estado\": \"Exitoso\",  \r\n    \"active\": true,  \r\n    \"Create_up\": \"2025-05-30T08:27:00Z\"  \r\n  },  \r\n  \"assign\": {  \r\n    \"Proceso\": \"Create\",  \r\n    \"Estado\": \"Pendiente\",  \r\n    \"active\": false,  \r\n    \"Create_up\": \"2025-05-28T08:27:00Z\"  \r\n  },  \r\n  \"cancel\": {  \r\n    \"Proceso\": \"Create\",  \r\n    \"Estado\": \"Pendiente\",  \r\n    \"active\": false,  \r\n    \"Create_up\": \"2025-05-28T08:27:00Z\"  \r\n  },  \r\n  \"create\": {  \r\n    \"Proceso\": \"Create\",  \r\n    \"Estado\": \"Pendiente\",  \r\n    \"active\": false,  \r\n    \"Create_up\": \"2025-05-28T08:27:00Z\"  \r\n  },  \r\n  \"finish\": {  \r\n    \"Proceso\": \"Create\",  \r\n    \"Estado\": \"Pendiente\",  \r\n    \"active\": false,  \r\n    \"Create_up\": \"2025-05-28T08:27:00Z\"  \r\n  },  \r\n  \"update\": {  \r\n    \"Proceso\": \"Create\",  \r\n    \"Estado\": \"Pendiente\",  \r\n    \"active\": false,  \r\n    \"Create_up\": \"2025-05-28T08:27:00Z\"  \r\n  }  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/api/v1/request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"v1",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get http://localhost:8002/api/v1/requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/api/v1/request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"v1",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8002/api/v1/request/paged",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/api/v1/request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"v1",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8001/api/v1/control-flota",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/v1/control-flota/paged",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"control-flota",
+						"paged"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST http://localhost:8001/api/v1/control-flota",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n  \"request\": 2529009,  \r\n  \"manifiesto\":\"10595709\",\r\n  \"idMetodo\":3,\r\n  \"metodo\":\"Activate\",\r\n  \"estado\":\"Pendiente\",\r\n  \"travelId\":-1,\r\n  \"observaciones\":\"Request pendiente por activar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/v1/control-flota",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"control-flota"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8003/api/v1/det-control-flota",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8003/api/v1/det-control-flota",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"api",
+						"v1",
+						"det-control-flota"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8003/api/v1/det-control-flota/paged",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8003/api/v1/det-control-flota/paged",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"api",
+						"v1",
+						"det-control-flota",
+						"paged"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST http://localhost:8003/api/v1/det-control-flota",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"controlFlotaId\": 7,\r\n    \"request\": 2529002,\r\n    \"manifiesto\": \"10595702\",\r\n    \"idMetodo\": 2,\r\n    \"metodo\": \"Create\",\r\n    \"estado\": \"Rechazado\",\r\n    \"travelId\": -1,\r\n    \"jsonenviado\": {\r\n        \"monitoring_order\": {\r\n            \"code_currency_commodity\": null,\r\n            \"prices_freight\": null,\r\n            \"code_currency_freight\": null,\r\n            \"price_insurance\": null,\r\n            \"code_currency_insurance\": null,\r\n            \"method_freight_payment\": null,\r\n            \"temperature_min\": null,\r\n            \"temperature_max\": null,\r\n            \"number_seals\": null,\r\n            \"satelite_seals\": null,\r\n            \"shooting_guard\": null,\r\n            \"observations\": null,\r\n            \"doc_ref1\": \"PRODUCTO BAVARIA   PRODUCTO BAVARIA   \",\r\n            \"doc_ref2\": null,\r\n            \"aux_fields\": [\r\n                {\r\n                    \"name\": \"id_status\",\r\n                    \"value\": \"6\"\r\n                },\r\n                {\r\n                    \"name\": \"name_status\",\r\n                    \"value\": \"Llegada a Cargue\"\r\n                },\r\n                {\r\n                    \"name\": \"description_status\",\r\n                    \"value\": \"El conductor lleg\\u00F3 a punto de Cargue - Efectivo Iniciado\"\r\n                }\r\n            ],\r\n            \"stops\": [\r\n                {\r\n                    \"code_businessunit\": null,\r\n                    \"description_businessunit\": null,\r\n                    \"code_location_seller\": null,\r\n                    \"description_location_seller\": null,\r\n                    \"number_order\": \"755451\",\r\n                    \"shipment_number\": \"10593801\",\r\n                    \"remission\": \"13887035\",\r\n                    \"number_delivery\": null,\r\n                    \"order_delivery\": null,\r\n                    \"bill\": null,\r\n                    \"id_type_delivery\": null,\r\n                    \"type_delivery\": null,\r\n                    \"description_type_delivery\": null,\r\n                    \"id_state_order\": null,\r\n                    \"description_state_order\": null,\r\n                    \"id_company_client\": \"860005224\",\r\n                    \"description_company_client\": \"BAVARIA \\u0026 CIA SCA SOCIEDAD EN COMANDITA POR ACCIONES\",\r\n                    \"type_company_client\": \"GC\",\r\n                    \"time_zone\": \"UTC-05:00\",\r\n                    \"code_location_destiny\": \"1428\",\r\n                    \"description_location_destiny\": \"BAVARIA BUCARAMANGA PLANTA\",\r\n                    \"type_location\": \"origen\",\r\n                    \"code_zone\": null,\r\n                    \"description_zone\": null,\r\n                    \"datetime_in_place\": \"22/05/2025 23:59:59\",\r\n                    \"datetime_out_place\": null,\r\n                    \"latitude\": \"7.1645628999999\",\r\n                    \"longitude\": \"-73.1384174\",\r\n                    \"address\": null,\r\n                    \"neighborhood\": null,\r\n                    \"indications\": null,\r\n                    \"code_city\": \"68001\",\r\n                    \"code_deparment\": \"68\",\r\n                    \"zip\": null,\r\n                    \"email_main_contact\": null,\r\n                    \"identification_main_contact\": null,\r\n                    \"name_main_contact\": null,\r\n                    \"phone_main_contact\": null,\r\n                    \"code_country_phone\": null,\r\n                    \"cellphone_main_contact\": null,\r\n                    \"mandate\": null,\r\n                    \"observations\": null,\r\n                    \"aux_fields\": [\r\n                        {\r\n                            \"name\": \"Stop\",\r\n                            \"value\": \"Origen\"\r\n                        }\r\n                    ],\r\n                    \"code_type_commodity\": null,\r\n                    \"description_type_commodity\": null,\r\n                    \"time_permanence_destinity\": null,\r\n                    \"products\": [\r\n                        {\r\n                            \"code_product\": \"182\",\r\n                            \"description_product\": \"PRODUCTO BAVARIA\",\r\n                            \"barcode\": null,\r\n                            \"amount_order\": null,\r\n                            \"amount_deliver\": null,\r\n                            \"unit\": \"Cajas\",\r\n                            \"weight\": \"37000\",\r\n                            \"volumen\": null,\r\n                            \"routing_variable\": \"Volumen\",\r\n                            \"amount_settled\": null,\r\n                            \"aux_fields\": [\r\n                                {\r\n                                    \"name\": \"Descripcion del Producto\",\r\n                                    \"value\": \"PRODUCTO BAVARIA\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"code_businessunit\": null,\r\n                    \"description_businessunit\": null,\r\n                    \"code_location_seller\": null,\r\n                    \"description_location_seller\": null,\r\n                    \"number_order\": \"755451\",\r\n                    \"shipment_number\": \"10593801\",\r\n                    \"remission\": \"13887035\",\r\n                    \"number_delivery\": null,\r\n                    \"order_delivery\": null,\r\n                    \"bill\": null,\r\n                    \"id_type_delivery\": null,\r\n                    \"type_delivery\": null,\r\n                    \"description_type_delivery\": null,\r\n                    \"id_state_order\": null,\r\n                    \"description_state_order\": null,\r\n                    \"id_company_client\": \"860005224\",\r\n                    \"description_company_client\": \"BAVARIA \\u0026 CIA SCA SOCIEDAD EN COMANDITA POR ACCIONES\",\r\n                    \"type_company_client\": \"GC\",\r\n                    \"time_zone\": \"UTC-05:00\",\r\n                    \"code_location_destiny\": \"1429\",\r\n                    \"description_location_destiny\": \"BAVARIA BARRANCABERMEJA\",\r\n                    \"type_location\": \"destino\",\r\n                    \"code_zone\": null,\r\n                    \"description_zone\": null,\r\n                    \"datetime_in_place\": \"22/05/2025 23:59:59\",\r\n                    \"datetime_out_place\": null,\r\n                    \"latitude\": \"7.0425756809117\",\r\n                    \"longitude\": \"-73.82759888482\",\r\n                    \"address\": null,\r\n                    \"neighborhood\": null,\r\n                    \"indications\": null,\r\n                    \"code_city\": \"68081\",\r\n                    \"code_deparment\": \"68\",\r\n                    \"zip\": null,\r\n                    \"email_main_contact\": null,\r\n                    \"identification_main_contact\": null,\r\n                    \"name_main_contact\": null,\r\n                    \"phone_main_contact\": null,\r\n                    \"code_country_phone\": null,\r\n                    \"cellphone_main_contact\": null,\r\n                    \"mandate\": null,\r\n                    \"observations\": null,\r\n                    \"aux_fields\": [\r\n                        {\r\n                            \"name\": \"Stop\",\r\n                            \"value\": \"Destino\"\r\n                        }\r\n                    ],\r\n                    \"code_type_commodity\": null,\r\n                    \"description_type_commodity\": null,\r\n                    \"time_permanence_destinity\": null,\r\n                    \"products\": [\r\n                        {\r\n                            \"code_product\": \"182\",\r\n                            \"description_product\": \"PRODUCTO BAVARIA\",\r\n                            \"barcode\": null,\r\n                            \"amount_order\": null,\r\n                            \"amount_deliver\": null,\r\n                            \"unit\": \"Cajas\",\r\n                            \"weight\": \"37000\",\r\n                            \"volumen\": null,\r\n                            \"routing_variable\": \"Volumen\",\r\n                            \"amount_settled\": null,\r\n                            \"aux_fields\": [\r\n                                {\r\n                                    \"name\": \"Descripcion del Producto\",\r\n                                    \"value\": \"PRODUCTO BAVARIA\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"price_commodity\": null,\r\n            \"volume\": null,\r\n            \"var_Route\": null,\r\n            \"code_company\": \"57Transer\",\r\n            \"number_travel_main\": \"2524733\",\r\n            \"number_travel_secondary\": \"10595700\",\r\n            \"code_type_operation\": \"233\",\r\n            \"description_type_operation\": \"BOTELLERO\",\r\n            \"code_type_trip\": \"4\",\r\n            \"travel_mode\": null,\r\n            \"weight\": null,\r\n            \"code_type_cargo\": null,\r\n            \"code_type_movement\": null,\r\n            \"description_type_movement\": null,\r\n            \"username\": null,\r\n            \"fullname\": null,\r\n            \"date_event\": null,\r\n            \"id_route\": \"6933\",\r\n            \"description_route\": \"BUCARAMANGA-\\u003EBARRANCABERMEJA, BAV1-LEBRIJA-DAGOTA \",\r\n            \"description_type_cargo\": null\r\n        }\r\n    },\r\n    \"jsonrecibido\": {\r\n        \"messages\": [\r\n            \"La orden ha sido creada con \\u00E9xito.\"\r\n        ],\r\n        \"errors\": [],\r\n        \"success\": true,\r\n        \"data\": {\r\n            \"travel_id\": 4344167\r\n        }\r\n    },\r\n    \"observaciones\": \"El servidor de ControlT no respondio\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8003/api/v1/det-control-flota",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"api",
+						"v1",
+						"det-control-flota"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

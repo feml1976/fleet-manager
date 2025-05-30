@@ -1,0 +1,66 @@
+version: "2.36.0"
+services:
+  postgres:
+    image: postgres:17.5-alpine3.21
+    ports:
+      - "5401:5401"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: msvc_controlflota
+    volumes:
+      - data-POSTGRES:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - spring
+  alpine:
+    image: postgres:17.5-alpine3.21
+    ports:
+      - "5402:5402"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: msvc_requests
+    volumes:
+      - data-POSTGRES:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - spring
+  msvc-artifact-requests:
+    image: f9ba7284e686:latest
+    ports:
+      - "8002:8002"
+    env_file:
+      - ./msvc.artifact-detcontrolflota/.env
+    networks:
+      - spring
+    depends_on:
+      - alpine
+    restart: always
+
+  msvc-artifact-controlflota:
+    image: da3005cab1e0:latest
+    ports:
+      - "8001:8001"
+    env_file:
+      - ./msvc-artifact-controlflota/.env
+    networks:
+      - spring
+    depends_on:
+      - postgres
+    restart: always
+  msvc-artifact-detcontrolflota:
+    image: c509fa51ebda:latest
+    ports:
+      - "8003:8003"
+    env_file:
+      - ./msvc.artifact-detcontrolflota/.env
+    networks:
+      - spring
+    depends_on:
+      - postgres
+    restart: always
+
+  volumes:
+    data-postgres:
+
+  networks:
+    spring:

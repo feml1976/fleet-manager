@@ -1,0 +1,36 @@
+docker run -p 5401:5432 --name msvc_controlflota --network spring -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=msvc_controlflota -d postgres:17.5-alpine3.21
+
+docker run -p 5402:5432 --name msvc_requests --network spring -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=msvc_requests -d postgres:17.5-alpine3.21
+
+
+docker start msvc_controlflota
+docker start msvc_requests
+
+
+docker stop msvc_controlflota
+docker stop msvc_requests
+
+java -jar msvc-artifact-requests-0.0.1-SNAPSHOT.jar
+java -jar msvc-artifact-controlflota-0.0.1-SNAPSHOT.jar
+java -jar msvc.artifact-detcontrolflota-0.0.1-SNAPSHOT.jar
+
+
+openjdk:21-jdk
+
+SERVICIO	IMAGE ID
+REQUEST		f9ba7284e686
+CONTROL		da3005cab1e0
+DETALLE		c509fa51ebda
+
+.\mvnw clean package -DskipTests
+
+docker build .
+
+docker run f9ba7284e686
+
+ docker run -p 8002:8002 f9ba7284e686
+
+ docker run -p 8002:8002 da3005cab1e0
+
+ docker run -p 8003:8003 c509fa51ebda
+
