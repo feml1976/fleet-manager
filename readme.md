@@ -2,6 +2,10 @@
 ## Descripción del Proyecto
 Fleet Manager es un sistema de gestión de flota de vehículos desarrollado con Spring Boot. El proyecto está estructurado como una aplicación de microservicios que permite el control y seguimiento de solicitudes relacionadas con la gestión de flotas de vehículos.
 
+En este directorio se encuentra el archivo Bootcamp de Microservicios con JAVA.pdf en el cual pueden encontrar mas información, tambien esta el archivo Fleet-Manager.postman_collection.json en el cual pueden encontrar las pruebas de los diferentes End Points
+
+En el directorio imagenes estan las pantallas que evidencian las pruebas realizadas a los diferentes End Points
+
 ## Estructura del Proyecto
 El proyecto está organizado como una aplicación multi-módulo Maven con los siguientes componentes:
 
